@@ -23,7 +23,7 @@
   <meta property="og:title" content="ElitePlex — Movies, TV Shows & Live TV" />
   <meta property="og:description" content="Explore movies, TV shows, series and Live TV with ElitePlex on Android Mobile and Android TV." />
   <meta property="og:url" content="https://eliteplex.pages.dev/" />
-  <meta property="og:image" content="https://i.postimg.cc/YCPSJLVG/1000131497.png" />
+  <meta property="og:image" content="https://eliteplex.pages.dev/Home.png" />
   <meta property="og:image:alt" content="ElitePlex Home interface" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ElitePlex — Movies, TV Shows & Live TV" />
@@ -523,30 +523,68 @@
 
 
 
-    .home-frame {
+    .logo-frame {
       position: relative;
-      width: min(100%, 620px);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 28px;
-      overflow: hidden;
-      background: #080808;
-      box-shadow: 0 40px 100px rgba(0,0,0,.65);
-      transform: rotate(-2deg);
+      width: min(100%, 460px);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 42px;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(255,255,255,.10), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.018));
+      box-shadow:
+        0 45px 110px rgba(0,0,0,.68),
+        inset 0 1px 0 rgba(255,255,255,.08);
+      transform: rotate(-3deg);
       z-index: 2;
     }
 
-    .home-frame::after {
+    .logo-frame::before {
       content: "";
       position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(to bottom, rgba(255,255,255,.06), transparent 18%, transparent 82%, rgba(0,0,0,.18));
+      width: 74%;
+      height: 74%;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 0 90px rgba(255,255,255,.08);
     }
 
-    .home-frame img {
-      display: block;
-      width: 100%;
-      height: auto;
+    .logo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255,255,255,.055);
+      border-radius: 32px;
+      pointer-events: none;
+    }
+
+    .app-logo {
+      position: relative;
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 42px;
+      box-shadow:
+        0 25px 65px rgba(0,0,0,.65),
+        0 0 55px rgba(255,255,255,.10);
+      z-index: 3;
+    }
+
+    .logo-name {
+      position: absolute;
+      bottom: 28px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #777;
+      z-index: 4;
     }
 
     .screenshot-grid {
@@ -1516,8 +1554,13 @@
               <strong>Android TV Ready</strong>
               <span>Built for the big screen.</span>
             </div>
-            <div class="home-frame">
-              <img src="https://eliteplex.pages.dev/Home.png" alt="ElitePlex Home screen" />
+            <div class="logo-frame" aria-label="ElitePlex app logo">
+              <img
+                class="app-logo"
+                src="https://i.postimg.cc/YCPSJLVG/1000131497.png"
+                alt="ElitePlex app logo"
+              />
+              <div class="logo-name">ElitePlex</div>
             </div>
           </div>
         </div>
@@ -2180,7 +2223,7 @@
     const CONFIG = {
 
       // Actual APK download link yahan paste karo
-      downloadUrl: "https://t.me/ElitePlex/680",
+      downloadUrl: "https://p01--filpvt--xfh8pdjfh7pd.code.run/dl/206633/Elite%20Plex.apk?code=facb1bf0ee29a349b2d48d70-7191031202",
 
       // Official Telegram
       telegramUrl: "https://t.me/ElitePlex"
